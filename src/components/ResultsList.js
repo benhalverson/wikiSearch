@@ -5,21 +5,17 @@ import { withNavigation } from 'react-navigation';
 import ResultsDetail from './ResultsDetail';
 
 const ResultsList = ({ title, results, navigation }) => {
-	// if (!results.length) {
-	// 	return null;
-	// }
-	
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>{title}</Text>
 			<FlatList
 				data={results}
-				keyExtractor={(result) => result.id}
+				keyExtractor={(result) => result.pageid}
 				renderItem={({ item }) => {
 					return (
-						<TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.id })}>
+						<TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.pageid })}>
 							<ResultsDetail result={item} />
-							<Text>Test</Text>
 						</TouchableOpacity>
 					);
 				}}

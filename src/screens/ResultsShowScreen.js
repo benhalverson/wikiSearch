@@ -6,7 +6,8 @@ const ResultsShowScreen = ({ navigation }) => {
 	const [ result, setResult ] = useState(null);
 	const id = navigation.getParam('id');
 	const getResult = async (id) => {
-		const response = await wiki.get(`/${id}`);
+    // https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json
+    const response = await wiki.get(`/${id}`);
 		setResult(response.data);
 	};
 
@@ -19,9 +20,9 @@ const ResultsShowScreen = ({ navigation }) => {
   }
 	return (
 		<View>
-			{/* <Text style={styles.title}>{result.name}</Text>
-      <FlatList 
-        data={result.photos}
+			<Text style={styles.title}>{result.pageid}</Text>
+      {/* <FlatList 
+        data={result.pageid}
         keyExtractor={(photo) => photo}
         renderItem={( {item }) => {
           return <Image style={styles.image} source={{ uri: item }} />

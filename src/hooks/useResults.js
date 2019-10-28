@@ -12,13 +12,14 @@ export default () => {
 					action: 'query',
 					list: 'search',
 					format: 'json',
-					
-					srsearch: searchTerm
+					srsearch: searchTerm,
+					srlimit: '20'
 				}
 			});
-			console.log(response.data.query.search);
-			// setResults(response.data.query.search);
+			
+			setResults(response.data.query.search);
 		} catch (e) {
+			console.log('error', e)
 			setErrorMessage(`Something went wrong \n${e.message}`);
 		}
   };

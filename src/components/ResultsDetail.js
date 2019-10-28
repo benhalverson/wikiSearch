@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { WebView } from 'react-native-webview'
 
 const ResultsDetail = ({ result }) => {
 	return (
 		<View style={styles.container}>
-      {/* <Image style={styles.image} source={{ uri: result.image_url }} /> */}
-      {/* <Text style={styles.name}>{result.name}</Text> */}
-      {/* <Text>{result.rating} Stars, {result.review_count} Reviews </Text> */}
-      <Text>Results Detail</Text>
+      <Text>{result.title}, Word Count: {result.wordcount}</Text>
+      <WebView style={styles.web}
+        originWhitelist={['*']} 
+        source={{html: result.snippet}}
+      />
 		</View>
 	);
 };
@@ -16,10 +18,8 @@ const styles = StyleSheet.create({
   container: {
     marginLeft: 15
   },
-  image: {
-    width: 250,
-    height: 120,
-    borderRadius: 5,
+  web: {
+    height: 25,
     marginBottom: 5
   },
   name: {

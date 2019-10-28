@@ -6,18 +6,14 @@ import ResultsList from '../components/ResultsList';
 
 const SearchScreen = () => {
 	const [ term, setTerm ] = useState('');
-	
-	
+
 	const [ searchApi, results, errorMessage ] = useResults();
 	return (
 		<View>
 			<SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi(term)} />
 			{errorMessage ? <Text>{errorMessage}</Text> : null}
 			<ScrollView>
-				<ResultsList 
-					results={results}
-					title="Cost Effective"
-					/>
+				<ResultsList results={results} />
 			</ScrollView>
 		</View>
 	);
