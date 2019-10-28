@@ -1,21 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
-	
 	return (
 		<View style={styles.backgroundStyle}>
-			<MaterialIcons name="search" style={styles.iconStyle} />
 			<TextInput
-        autoCapitalize="none"
-        autoComplete={false}
+				autoCapitalize="none"
+				autoComplete={false}
 				style={styles.inputStyle}
 				placeholder="Search"
 				value={term}
-        onChangeText={onTermChange}
-        onEndEditing={onTermSubmit}
+				onChangeText={onTermChange}
+				onEndEditing={onTermSubmit}
 			/>
+			<MaterialIcons name="search" style={styles.iconStyle} onPress={onTermSubmit} />
 		</View>
 	);
 };
