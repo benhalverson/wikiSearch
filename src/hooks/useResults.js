@@ -13,7 +13,7 @@ export default () => {
 					list: 'search',
 					format: 'json',
 					srsearch: searchTerm,
-					srlimit: '20'
+					srlimit: '50'
 				}
 			});
 			
@@ -25,9 +25,9 @@ export default () => {
   };
   
   // including this for a default search
-  useEffect(() => {
-    searchApi('Pasta');
-  }, []);
+  // useEffect(() => {
+  //   searchApi('Pasta');
+  // }, []);
 
   return [searchApi, results, errorMessage];
 };
