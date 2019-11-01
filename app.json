@@ -24,7 +24,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "me.benhalverson.wikisearch"
+    },
+    "android": {
+      "package": "me.benhalverson.wikisearch"
     }
   }
 }
