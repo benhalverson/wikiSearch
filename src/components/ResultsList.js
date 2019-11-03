@@ -11,7 +11,7 @@ const ResultsList = ({ title, results, navigation }) => {
 			<Text style={styles.title}>{title}</Text>
 			<FlatList
 				data={results}
-				keyExtractor={(result) => result.pageid}
+				keyExtractor={(result) => result.pageid.toString()}
 				renderItem={({ item }) => {
 					return (
 						<TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.pageid })}>

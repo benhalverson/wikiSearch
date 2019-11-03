@@ -29,6 +29,8 @@
     },
     "android": {
       "package": "me.benhalverson.wikisearch"
-    }
+    },
+    "description": "A demo app that searches wikipedia",
+    "githubUrl": "https://github.com/benhalverson/wikiSearch"
   }
 }
